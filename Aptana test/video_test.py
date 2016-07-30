@@ -9,7 +9,7 @@ def video_face():
     eye = cv2.CascadeClassifier('/usr/local/share/OpenCV/haarcascades/haarcascade_eye.xml')
     
 #vid = cv2.VideoCapture(0)
-    vid = WebcamStream(src=1)
+    vid = WebcamStream(src=0)
     vid.start()
     while(1):
         frame = vid.read()
@@ -26,7 +26,7 @@ def video_face():
         
         resz = cv2.resize(frame,(1920,1080))
         vid.rea().write(frame)
-    	sys.stdout.write(frame.tostring())
+        sys.stdout.write(frame.tostring())
         cv2.imshow('img',resz)
         if cv2.waitKey(1) & 0xff == ord('q'):
             break
@@ -39,5 +39,5 @@ def video_face():
     vid.stop()
 
 if __name__ == "__main__":
-       video_face()
+    video_face()
     
